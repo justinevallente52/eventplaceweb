@@ -1,0 +1,205 @@
+body {
+  background: #B5C99A;
+  margin: 0;
+  padding: 0;
+}
+
+.venues-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.venues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  position: relative;
+    /* Make sure floating circles are behind this */
+    z-index: 1;
+}
+
+.venue-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.venue-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.venue-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #718355, transparent);
+  z-index: -1;
+  transition: transform 0.6s ease-in-out;
+  transform: scale(0);
+}
+
+.venue-card:hover::before {
+  transform: scale(1.5);
+}
+
+.venue-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.venue-card:hover .venue-image {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+h1 {
+  color: #718355;
+  font-size: 5rem;
+  margin-bottom: 50px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
+z-index: 1;
+position: relative;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: black;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating circles */
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.floating-circle:nth-child(9) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 50%;
+  right: 200%;
+  bottom: 50%;
+  animation-delay: 0s;
+
+}
+
+.floating-circle:nth-child(10) {
+  width: 100px;
+  height: 100px;
+  top: 80%;
+  right: 105%;
+  bottom: 20%;
+  animation-delay: 1s;
+}
+
+.floating-circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 3%;
+  right: 5%;
+  left: -25ch;
+
+  animation-delay: 2s;
+}
+
+.floating-circle:nth-child(4) {
+  width: 110px;
+  height: 110px;
+  top: 50%;
+  left: 110%;
+  
+  animation-delay: 1.5s;
+}
+
+.floating-circle:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  top: 95%;
+  left: 80%;
+  animation-delay: 2.5s;
+}
+
+.floating-circle:nth-child(6) {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 90%;
+  animation-delay: 0s;
+}
+
+.floating-circle:nth-child(7) {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.floating-circle:nth-child(8) {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-50px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .venues-grid {
+    grid-template-columns: 1fr;
+  }
+}

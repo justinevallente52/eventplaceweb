@@ -1,0 +1,141 @@
+/* General Reset for All Screen Sizes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home Section */
+.home {
+  text-align: center;
+  padding: 20px;
+  background: #B5C99A;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Circles */
+.floating-circle {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Home Heading */
+.home h1 {
+  font-size: 4rem;
+  color: #718355;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 2px white;
+}
+
+/* Paragraph */
+.home p {
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.8;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  margin: 20px auto;
+  max-width: 95%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: 100%;
+  display: block;
+}
+
+.carousel:hover {
+  transform: scale(1.05);
+}
+
+/* About Management Section */
+.about-management {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Form Section */
+.contact-form {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+button {
+  background-color: #718355;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5f6f4e;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #718355;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #5f6f4e;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .home h1 { font-size: 3.5rem; }
+  .contact-form { width: 80%; }
+}
+
+@media (max-width: 768px) {
+  .home h1 { font-size: 2.5rem; }
+  .home p { font-size: 1rem; }
+  .about-management, .contact-form { width: 90%; padding: 15px; }
+}
+
+@media (max-width: 480px) {
+  .home h1 { font-size: 2rem; }
+  .home p { font-size: 0.9rem; }
+  .carousel { max-width: 100%; }
+  .contact-form { width: 100%; padding: 10px; }
+}
